@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Songs</title>
+	</head>
+	<body>
+		<h1 th:text="'Best of 2021 by ' + ${name}"></h1>
+		<div th:if="${songs.size() > 0}">
+			<h2><a th:href="@{/index}" th:text="HOME"></a ></h2 >
+			<ul>
+				<li th:each="song : ${songs}">
+					<a th:href="@{'/songs/' + ${song}}" th:text="${song}"></a>
+				</li>	
+			</ul>
+		</div>
+	</body>
+</html>
